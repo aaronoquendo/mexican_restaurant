@@ -59,7 +59,7 @@ This website is designed to work on modern browsers including:
 
 ## Live Website Url
 
-mexican-resturant-1.netlify.app
+https://mexican-resturant-1.netlify.app/
 
 ## License
 
