@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu | El Sabor Mexicano</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+    <style>
+        /* Additional styles specific to the menu page */
+        .menu-hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/1395319/pexels-photo-1395319.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+        }
+        
+        .menu-section {
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .category-btn {
+            background-color: var(--background-alt);
+            color: var(--text-color);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .menu-category {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .category-title {
+            position: relative;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            font-size: 2.8rem;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-color);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item-image {
+            height: 200px;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu-item-info {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .menu-item-title {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+        
+        .menu-item-price {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .menu-item-description {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+            flex: 1;
+        }
+        
+        .dietary-labels {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .dietary-label {
+            font-size: 1.2rem;
+            padding: 4px 8px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+        }
+        
+        .vegetarian {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .spicy {
+            background-color: #FF5722;
+            color: white;
+        }
+        
+        .gluten-free {
+            background-color: #FFC107;
+            color: #333;
+        }
+        
+        @media (min-width: 768px) {
+            .menu-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .menu-items {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">El Sabor</span>
+                        <span class="logo-accent">Mexicano</span>
+                    </a>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="header-buttons">
+                    <a href="index.html#reservation" class="btn btn-primary">Book a Table</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Menu Hero Section -->
+        <section class="hero menu-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Our <span class="accent">Menu</span></h1>
+                    <p class="hero-subtitle">Authentic Mexican flavors, made fresh daily</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Our Offerings</h2>
+                    <p>Traditional Mexican cuisine with a modern twist</p>
+                </div>
+
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="appetizers">Appetizers</button>
+                    <button class="category-btn" data-category="tacos">Tacos</button>
+                    <button class="category-btn" data-category="entrees">Entrees</button>
+                    <button class="category-btn" data-category="desserts">Desserts</button>
+                    <button class="category-btn" data-category="drinks">Drinks</button>
+                </div>
+
+                <!-- Appetizers -->
+                <div class="menu-category" id="appetizers">
+                    <h3 class="category-title">Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/5848471/pexels-photo-5848471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Guacamole">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Fresh Guacamole</h4>
+                                    <span class="menu-item-price">$9.99</span>
+                                </div>
+                                <p class="menu-item-description">Made tableside with fresh avocados, tomatoes, onions, cilantro, and lime juice. Served with warm tortilla chips.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label vegetarian">Vegetarian</span>
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Loaded Nachos">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Loaded Nachos</h4>
+                                    <span class="menu-item-price">$12.99</span>
+                                </div>
+                                <p class="menu-item-description">Crispy tortilla chips layered with melted cheese, beans, jalapeños, guacamole, sour cream, and your choice of meat.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label spicy">Spicy</span>
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1618040996337-11a1401877d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Queso Fundido">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Queso Fundido</h4>
+                                    <span class="menu-item-price">$10.99</span>
+                                </div>
+                                <p class="menu-item-description">Melted Chihuahua cheese with roasted poblano peppers and chorizo. Served with warm flour tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free Option</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tacos -->
+                <div class="menu-category" id="tacos">
+                    <h3 class="category-title">Tacos</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Street Tacos">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Street Tacos</h4>
+                                    <span class="menu-item-price">$12.99</span>
+                                </div>
+                                <p class="menu-item-description">Three authentic corn tortillas with your choice of meat (al pastor, carnitas, carne asada, or chicken tinga), topped with cilantro, onions, and lime.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1624300629298-e9de39c13be5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fish Tacos">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Fish Tacos</h4>
+                                    <span class="menu-item-price">$14.99</span>
+                                </div>
+                                <p class="menu-item-description">Three tacos with grilled or beer-battered fish, cabbage slaw, pico de gallo, and chipotle crema on corn tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free Option</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vegetarian Tacos">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Vegetarian Tacos</h4>
+                                    <span class="menu-item-price">$11.99</span>
+                                </div>
+                                <p class="menu-item-description">Three tacos with roasted vegetables, black beans, queso fresco, avocado, and tomatillo salsa on corn tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label vegetarian">Vegetarian</span>
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrees -->
+                <div class="menu-category" id="entrees">
+                    <h3 class="category-title">Entrees</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1534352956036-cd81e27dd615?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Enchiladas Verdes">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Enchiladas Verdes</h4>
+                                    <span class="menu-item-price">$15.99</span>
+                                </div>
+                                <p class="menu-item-description">Three corn tortillas filled with chicken, covered in green tomatillo sauce and melted cheese. Served with rice and beans.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/5737241/pexels-photo-5737241.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mole Poblano">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Mole Poblano</h4>
+                                    <span class="menu-item-price">$18.99</span>
+                                </div>
+                                <p class="menu-item-description">Chicken smothered in our family-secret mole sauce with a blend of chilies, chocolate, and spices. Served with rice and warm tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1629034607357-8487941e71c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chiles Rellenos">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Chiles Rellenos</h4>
+                                    <span class="menu-item-price">$16.99</span>
+                                </div>
+                                <p class="menu-item-description">Two poblano peppers stuffed with cheese, dipped in egg batter and fried, topped with ranchero sauce. Served with rice and beans.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label vegetarian">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.unsplash.com/photo-1633198012776-07b6bc41efe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Carne Asada">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Carne Asada</h4>
+                                    <span class="menu-item-price">$21.99</span>
+                                </div>
+                                <p class="menu-item-description">Grilled marinated skirt steak with chimichurri sauce, served with rice, beans, guacamole, and warm tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/fajitas.jpg" alt="Sizzling Fajitas">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Sizzling Fajitas</h4>
+                                    <span class="menu-item-price">$19.99</span>
+                                </div>
+                                <p class="menu-item-description">Your choice of protein (chicken, steak, shrimp, or mixed) with sautéed peppers and onions, served with rice, beans, guacamole, sour cream, and warm tortillas.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free Option</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/burrito.jpg" alt="Burrito Grande">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Burrito Grande</h4>
+                                    <span class="menu-item-price">$16.99</span>
+                                </div>
+                                <p class="menu-item-description">Large flour tortilla filled with your choice of meat, rice, beans, cheese, lettuce, and pico de gallo. Topped with sauce and served with a side of guacamole.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label spicy">Spicy Option</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-category" id="desserts">
+                    <h3 class="category-title">Desserts</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/8447636/pexels-photo-8447636.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Flan">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Flan</h4>
+                                    <span class="menu-item-price">$7.99</span>
+                                </div>
+                                <p class="menu-item-description">Traditional Mexican caramel custard, smooth and creamy with a caramel sauce.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/7140933/pexels-photo-7140933.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Churros">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Churros</h4>
+                                    <span class="menu-item-price">$8.99</span>
+                                </div>
+                                <p class="menu-item-description">Crispy fried pastry dusted with cinnamon sugar, served with chocolate and caramel dipping sauces.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tres Leches Cake">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Tres Leches Cake</h4>
+                                    <span class="menu-item-price">$8.99</span>
+                                </div>
+                                <p class="menu-item-description">Moist sponge cake soaked in three kinds of milk, topped with whipped cream and fresh berries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-category" id="drinks">
+                    <h3 class="category-title">Drinks</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="https://images.pexels.com/photos/2795026/pexels-photo-2795026.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Classic Margarita">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Classic Margarita</h4>
+                                    <span class="menu-item-price">$10.99</span>
+                                </div>
+                                <p class="menu-item-description">Premium tequila, fresh lime juice, and orange liqueur, served on the rocks with a salted rim.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/horchata.jpg" alt="Horchata">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Horchata</h4>
+                                    <span class="menu-item-price">$4.99</span>
+                                </div>
+                                <p class="menu-item-description">Traditional rice drink flavored with cinnamon and vanilla, served over ice.</p>
+                                <div class="dietary-labels">
+                                    <span class="dietary-label vegetarian">Vegetarian</span>
+                                    <span class="dietary-label gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="images/mexican-beer.jpg" alt="Mexican Beer">
+                            </div>
+                            <div class="menu-item-info">
+                                <div class="menu-item-header">
+                                    <h4 class="menu-item-title">Mexican Beer</h4>
+                                    <span class="menu-item-price">$5.99</span>
+                                </div>
+                                <p class="menu-item-description">Choice of Corona, Modelo, Dos Equis, Pacifico, or Tecate. Served with lime.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">El Sabor</span>
+                        <span class="logo-accent">Mexicano</span>
+                    </div>
+                    <p>Authentic Mexican cuisine made with fresh ingredients and traditional recipes.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get updates on special events and promotions</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 El Sabor Mexicano. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Additional JavaScript for menu page
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const menuCategories = document.querySelectorAll('.menu-category');
+            
+            // Function to filter menu items by category
+            function filterMenu(category) {
+                // Remove active class from all buttons
+                categoryButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                document.querySelector(`.category-btn[data-category="${category}"]`).classList.add('active');
+                
+                // Show or hide menu categories based on selection
+                if (category === 'all') {
+                    menuCategories.forEach(cat => {
+                        cat.style.display = 'block';
+                    });
+                } else {
+                    menuCategories.forEach(cat => {
+                        if (cat.id === category) {
+                            cat.style.display = 'block';
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    });
+                }
+            }
+            
+            // Add click event to category buttons
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    filterMenu(category);
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

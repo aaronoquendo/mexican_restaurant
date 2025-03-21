@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sabor Mexicano | Authentic Mexican Cuisine</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">El Sabor</span>
+                        <span class="logo-accent">Mexicano</span>
+                    </a>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="header-buttons">
+                    <a href="#reservation" class="btn btn-primary">Book a Table</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Experience Authentic <span class="accent">Mexican Cuisine</span></h1>
+                    <p class="hero-subtitle">Traditional flavors with a modern twist, made from fresh ingredients daily</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">View Menu</a>
+                        <a href="#reservation" class="btn btn-outline">Make Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Authentic Recipes</h3>
+                        <p>Traditional recipes passed down through generations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-pepper-hot"></i>
+                        </div>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Locally sourced, fresh ingredients in every dish</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cocktail"></i>
+                        </div>
+                        <h3>Craft Drinks</h3>
+                        <p>Handcrafted cocktails and premium tequila selection</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Dishes -->
+        <section id="menu" class="menu-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Popular Dishes</h2>
+                    <p>Discover our chef's signature creations</p>
+                </div>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Authentic Mexican Tacos">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Street Tacos</h3>
+                            <p class="dish-description">Authentic corn tortillas with your choice of meat, topped with cilantro and onions</p>
+                            <span class="dish-price">$12.99</span>
+                        </div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.unsplash.com/photo-1534352956036-cd81e27dd615?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Homemade Enchiladas">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Enchiladas Verdes</h3>
+                            <p class="dish-description">Corn tortillas filled with chicken, covered in green tomatillo sauce and melted cheese</p>
+                            <span class="dish-price">$15.99</span>
+                        </div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.pexels.com/photos/5848471/pexels-photo-5848471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fresh Guacamole">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Fresh Guacamole</h3>
+                            <p class="dish-description">Made tableside with avocados, tomatoes, onions, cilantro, and lime juice</p>
+                            <span class="dish-price">$9.99</span>
+                        </div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="https://images.pexels.com/photos/5737241/pexels-photo-5737241.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Chicken Mole">
+                        </div>
+                        <div class="dish-info">
+                            <h3>Mole Poblano</h3>
+                            <p class="dish-description">Chicken smothered in our family-secret mole sauce with a blend of chilies and chocolate</p>
+                            <span class="dish-price">$18.99</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-button">
+                    <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1555992457-b8fefdd46da2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior">
+                    </div>
+                    <div class="about-content">
+                        <div class="section-header">
+                            <h2>Our Story</h2>
+                        </div>
+                        <p>Founded in 2005, El Sabor Mexicano began as a small family restaurant with a big dream: to bring authentic Mexican flavors to our community while creating a warm, inviting atmosphere for all guests.</p>
+                        <p>Our recipes have been passed down through generations, preserving the rich culinary heritage of Mexico while incorporating contemporary techniques to create a unique dining experience.</p>
+                        <p>Every dish is prepared with love and attention to detail, using locally sourced ingredients and traditional cooking methods to ensure authentic flavors in every bite.</p>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Gallery</h2>
+                    <p>A visual taste of our food and atmosphere</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Mexican Food">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Restaurant Atmosphere">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.pexels.com/photos/2795026/pexels-photo-2795026.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cocktails">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chef Preparation">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1613514785940-daed07799d9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Specialty Dish">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dessert">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Customers Say</h2>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The most authentic Mexican food I've had outside of Mexico. The atmosphere is warm and inviting, and the service is impeccable."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer Avatar">
+                            </div>
+                            <div class="author-info">
+                                <h4>Maria G.</h4>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reservation" class="reservation">
+            <div class="container">
+                <div class="reservation-grid">
+                    <div class="reservation-content">
+                        <div class="section-header">
+                            <h2>Reserve Your Table</h2>
+                            <p>Make a reservation for an unforgettable dining experience</p>
+                        </div>
+                        <form class="reservation-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Time</label>
+                                    <input type="time" id="time" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" required>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6+ people</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Special Requests</label>
+                                <textarea id="message" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Book Now</button>
+                        </form>
+                    </div>
+                    <div class="reservation-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Restaurant Table">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Address</h4>
+                                <p>123 Main Street, City, State 12345</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Phone</h4>
+                                <p>(123) 456-7890</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>info@elsabormexicano.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Hours</h4>
+                                <p>Monday - Thursday: 11am - 10pm</p>
+                                <p>Friday - Saturday: 11am - 11pm</p>
+                                <p>Sunday: 12pm - 9pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23e28c1191%3A0x49f75d3281df052a!2s123%20Main%20St%2C%20New%20York%2C%20NY%2010002!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <span class="logo-text">El Sabor</span>
+                        <span class="logo-accent">Mexicano</span>
+                    </div>
+                    <p>Authentic Mexican cuisine made with fresh ingredients and traditional recipes.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get updates on special events and promotions</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 El Sabor Mexicano. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
